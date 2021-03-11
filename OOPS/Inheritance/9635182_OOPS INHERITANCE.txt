@@ -1,0 +1,144 @@
+1. Create a class named ‘Animal’ which includes methods like eat() and sleep().
+
+Create a child class of Animal named ‘Bird’ and override the parent class methods. Add a new method named fly().
+
+Create an instance of Animal class and invoke the eat and sleep methods using this object.
+
+Create an instance of Bird class and invoke the eat, sleep and fly methods using this object.
+
+public class Animal {
+    public Animal() {
+        System.out.println("A new animal has been created!");
+    }
+     
+    public void sleep() {
+        System.out.println("An animal sleeps...");
+    }
+     
+    public void eat() {
+        System.out.println("An animal eats...");
+    }
+}
+public class Bird extends Animal {
+    public Bird() {
+        super();
+        System.out.println("A new bird has been created!");
+    }
+     
+    @Override
+    public void sleep() {
+        System.out.println("A bird sleeps...");
+    }
+     
+    @Override
+    public void eat() {
+        System.out.println("A bird eats...");
+    }
+}
+public class Dog extends Animal {
+    public Dog() {
+        super();
+        System.out.println("A new dog has been created!");
+    }
+     
+    @Override
+    public void sleep() {
+        System.out.println("A dog sleeps...");
+    }
+     
+    @Override
+    public void eat() {
+        System.out.println("A dog eats...");
+    }
+}
+
+public class Q1 {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Bird bird = new Bird();
+        Dog dog = new Dog();
+         
+        System.out.println();
+         
+        animal.sleep();
+        animal.eat();
+         
+        bird.sleep();
+        bird.eat();
+         
+        dog.sleep();
+        dog.eat();
+    }
+}
+
+2. Create a class called Person with a member variable name. Save it in a file called Person.java
+
+Create a class called Employee that will inherit the Person class.The other data members of the Employee class are annual salary (double), the year the employee started to work, and the national insurance number which is a String.Save this in a file called Employee.java
+
+Your class should have the necessary constructors and getter/setter methods.
+
+Write another class called TestEmployee, containing a main method to fully test your class definition.
+
+public Person(String n){
+	name=n;
+	}
+public void setName(String n){
+	name=n;
+	}
+public String getName(){
+	return name;
+	}
+public String toString(){
+	return name;
+	}
+}
+
+
+
+
+public class Employee extends Person{
+	private double annual_salary;
+	private int emp_yr;
+	private String insurance_no;
+	
+	public Employee(String n, double a, int y, String i){
+		super(n);
+		annual_salary=a;
+		emp_yr=y;
+		insurance_no=i;
+		}
+	public void setSalary(double a){
+		annual_salary=a;
+		}
+	public void setYear(int y){
+		emp_yr=y;
+		}
+	public void setInsurance_no(String i){
+		insurance_no=i;
+		}
+	public double getSalary(){
+		return annual_salary;
+		}
+	public int getYear(){
+		return emp_yr;
+		}
+	public String getInsurance_no(){
+		return super.toString() + " " + annual_salary + " " + emp_yr + " " + insurance_no;
+		}
+	}
+	
+
+
+
+
+public class TestEmployee{
+	public static void main(String args[]){
+		Person p = new Person("Anil");
+		Employee e = new Employee("Jim",1000,2015,"abcd");
+		System.out.println(p);
+		System.out.println(e);
+		}
+
+}
+
+

@@ -1,0 +1,54 @@
+UNIX Backup Tools
+
+ 1. Copy the file  /etc/passwd  into the current directory as passwd_UserID.
+
+sudo cp passwd passwd_UserID
+
+
+2. Long list the file passwd_UserID and observe the size of the file.
+
+ ls -l
+
+3. Compress the file passwd_UserID using bzip2 and observe the size of the compressed file. 
+
+bzip2 passwd_userID
+
+4.  View the data from the compressed file.
+
+bzcat passwd_userID.bz2
+
+5. Uncompress the file passwd_UserID.
+
+bzip2 -d passwd_UserID.bz2
+
+6. Compress the same file passwd_UserID this time with gzip and observe the % of compression.
+
+ gzip passwd_UserID
+
+7. Unzip the file passwd_UserID.gz
+
+gunzip passwd_UserID.gzip
+
+
+
+ 1. Create a directory UserData_UserID under the current directory.
+
+sudo mkdir UserData_UserID
+
+2. Copy the files  /etc/passwd ,  /etc/shadow and /etc/group into UserData_UserID directory.
+
+sudo cp passwd shadow group UserData_UserID
+
+3. Using tar take the backup of  UserData_UserID directory into UserData_UserID.tar file.
+
+sudo tar -cvf UserData_UserID.tar UserData_UserID
+
+4. List the contents of the tar file and confirm all the files are there.
+
+tar tf UserData_UserID.tar
+
+5. Remove the directory  UserData_UserID and restore the data from the tar file
+
+sudo rmdir --ignore-fail-on-non-empty UserData_UserID
+sudo tar -xvf UserData_UserID.tar
+

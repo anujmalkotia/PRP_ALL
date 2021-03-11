@@ -1,0 +1,35 @@
+1. Find the highest, lowest, sum, and average salary of all employees.  Label the columns as Maximum, Minimum, Sum, and Average, respectively.  Run the query.
+
+SELECT ROUND(MAX(salary),0) "Maximum",
+ ROUND(MIN(salary),0) "Minimum",
+ ROUND(SUM(salary),0) "Sum",
+ ROUND(AVG(salary),0) "Average"
+FROM employees; 
+
+2. Modify the above query to display the minimum, maximum, sum, and average salary for each job type. 
+
+SELECT job_id, ROUND(MAX(salary),0) "Maximum",
+ ROUND(MIN(salary),0) "Minimum",
+ ROUND(SUM(salary),0) "Sum",
+ ROUND(AVG(salary),0) "Average"
+FROM employees
+GROUP BY job_id; 
+
+3.Determine the number of managers without listing them. Label the column as Number of Managers.
+
+SELECT job_id, COUNT(*)
+FROM employees
+GROUP BY job_id; 
+
+4. Find the difference between the highest and lowest salaries. Label the column DIFFERENCE.
+
+SELECT MAX(salary) - MIN(salary) DIFFERENCE
+FROM employees; 
+
+5.Create a report to display the manager number and the salary of the lowest-paid employee for that manager. Exclude anyone whose manager is not known. Exclude any groups where the minimum salary is $6,000 or less. Sort the output in descending order of salary.
+SELECT manager_id, MIN(salary)
+FROM employees
+WHERE manager_id IS NOT NULL
+GROUP BY manager_id
+HAVING MIN(salary) > 6000
+ORDER BY MIN(salary) DESC; 

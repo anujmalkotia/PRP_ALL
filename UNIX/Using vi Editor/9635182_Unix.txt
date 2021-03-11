@@ -1,0 +1,23 @@
+Using vi Editor
+
+ Using the vi Editor
+1. Create a new file viFile_UserID using vi  and enter the following text:
+    a) Insert the following records as is(don’t apply your English).
+        A010_UserID   Pranoy_UserID  Vice Presidint_UserID     Calcuta_UserID  Calcuta_UserID
+        A009_UserID   Barkha_UserID  Progrm Mngr_UserID      Bombay_UserID  Bombay_UserID
+        A005_UserID   Rajat_UserID      AsistatDirecor_UserID    New Deli_UserID   Cochin_UserID
+        A002_UserID   Frank_UserID     Program Editooor_UserID Calctta_UserID  Calcuta_UserID
+2. Correct all the errors in the above file using vi Editor(don’t change the place names to current ones)
+3. Replace all the occurences of Calcutta_UserID with Kolkatha_UserID in the file
+
+:s/Calcutta_UserID/Kolkatha_UserID/
+
+4. Search for the word Rajat_UserID
+
+:s/Rajat_UserID
+
+
+
+
+
+

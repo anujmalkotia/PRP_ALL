@@ -1,0 +1,26 @@
+System Administration – Part 2
+
+a) Display the 1st line of the file /etc/passwd
+
+$ head -1 etc/passwd
+
+b) Display the lines from 5th to 8th from /etc/passwd
+
+$ head -n5 etc/passwd | tail -n8
+
+
+c) Display the 2nd line of the file /etc/passwd
+
+$ head -2 etc/passwd
+
+d) Display the penultimate(second last) line of the file /etc/passwd
+
+$ tail -2 etc/passwd | head -1
+
+e) Display the output of   ls  -l  command where the columns are separated  by  |
+
+
+
+f) Display the names & the terminal names of all the online users in the ascending order of the terminal names
+
+w

@@ -1,0 +1,5 @@
+f=open("psswd.txt")
+a=f.readline()
+print (a)
+b=a.split()
+print (b)

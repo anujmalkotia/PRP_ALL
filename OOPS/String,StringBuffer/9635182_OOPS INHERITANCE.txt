@@ -1,0 +1,286 @@
+1.
+Write a Program to check whether a given String is Palindrome or not.
+
+public class Q1
+{
+    public static void main(String args[])
+    {
+        String a, b = "";
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the string you want to check:");
+        a = s.nextLine();
+        int n = a.length();
+        for(int i = n - 1; i >= 0; i--)
+        {
+            b = b + a.charAt(i);
+        }
+        if(a.equalsIgnoreCase(b))
+        {
+            System.out.println("The string is palindrome.");
+        }
+        else
+        {
+            System.out.println("The string is not palindrome.");
+        }
+    }
+}
+
+2.
+Write a java program that will concatenate 2 strings and return the result. The result should be in lowercase.
+
+Note:If the concatenation creates a double-char, then one of the characters need to be omitted.
+
+Example1)
+i/p:Sachin,Tendulkar
+o/p:sachin tendulkar
+
+Example2)
+i/p:Mark,kate
+o/p:markate
+
+public class Q2 {
+
+    public static void main(String[] args)
+    {
+        String str1 = "Hello ";
+        String str2 = "World";
+        
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2); 
+       
+
+        String str3 = str1.concat(str2);
+
+       
+        System.out.println("The concatenated string: " + str3.toLowerCase());
+    }
+}
+
+
+
+3.
+ Given a string, return a new string made of 'n' copies of the first 2 chars of the original string where 'n' is the length of the string.
+
+Example1)
+i/p:Wipro
+o/p:WiWiWiWiWi
+
+
+import java.util.Scanner;
+
+public class String3 {
+
+   
+    public static void main(String[] args) {
+        
+        Scanner sc= new Scanner(System.in);
+        String next="";
+        System.out.println("Enter the string");       
+        String abc= sc.nextLine();
+        int lenght =abc.length();
+        if(lenght<=1){
+            next=abc;
+           
+        }
+        else{
+            for (int i=0;i<lenght;i++){
+                next=next+abc.charAt(0)+abc.charAt(1);
+            }
+        }
+        System.out.print(next);
+    sc.close();
+
+    }
+
+}
+
+
+
+4.
+ Write a java program that will return the first half of the string, if the length of the string is even. It should return null for odd length string.
+
+Example1)
+i/p:TomCat
+o/p:Tom
+
+Example2)
+i/p:Apron
+o/p:null
+
+import java.lang.*;
+ public class Q4 {
+ public static void main(String[] args)
+ {
+    String main_string = "Python";    
+    System.out.println(main_string.substring(0, main_string.length()/2));	
+  } 
+ }
+
+
+
+5.
+ Write a java program that accepts a string and returns a new string without the first and last character of the input string.
+
+Example1)
+i/p:Suman
+o/p:uma
+
+import java.util.*; 
+  
+class Q5 { 
+    static String FirstAndLast(String str) 
+    { 
+  
+        
+        String[] arrOfStr = str.split(" "); 
+  
+        
+        String res = ""; 
+  
+        
+        for (String a : arrOfStr) { 
+            res += a.substring(1, a.length() - 1) + " "; 
+        } 
+  
+        return res; 
+    } 
+  
+    
+    public static void main(String args[]) 
+    { 
+        String str = "Geeks for Geeks"; 
+        System.out.println(str); 
+        System.out.println(FirstAndLast(str)); 
+    } 
+} 
+
+
+
+6.
+Given 2 strings, a and b, return a new string of the form short+long+short, with the shorter string on the outside and the longer string on the inside.
+
+The strings will not be the same length, but they may be empty (length 0).
+
+If input is "hi" and "hello", then output will be "hihellohi".
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Q6
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        
+        Scanner scanner = new Scanner(System.in);
+        String a = scanner.next();
+        String b = scanner.next();
+        if(a.length() > b.length())
+        System.out.println(b+a+b);
+        else
+        System.out.println(a+b+a);
+    }
+}
+
+7.
+Given a string, if the first or last chars are 'x', return the string without those 'x' chars, otherwise return the string unchanged. 
+
+If the input is "xHix", then output is "Hi".
+If the input is "America", then the output is "America".
+
+public String withoutX(String str) {
+   
+  if(str.length() < 1) return str ;
+  if(str.length() == 1 && str.equals("x") ) return "" ;
+   
+  if( str.substring(0).equals("x") ){
+        if( str.substring(str.length()-1).equals("x") )
+           return str.substring(1,str.length()-1) ;
+            
+        else return str.substring(1) ;
+       
+      }
+    
+  else if( str.substring(str.length()-1).equals("x")) // *  -  my code does not go here 
+        
+           return str.substring(0,str.length()-1) ;
+            
+   else return str ;
+}
+
+8.
+ Write a Java program that accepts a string (with * in it). The program should return a new string in which the following characters are removed-*,the characters that are to the left and right of *
+
+Example1)
+i/p:ab*cd
+o/p:ad
+
+
+
+9.
+Given two strings, a and b, print a new string which is made of the following combination-first character of a, the first character of b, second character of a, second character of b and so on. 
+Any characters left, will go to the end of the result.
+
+Example1)
+i/p:Hello,World
+o/p:HWeolrllod
+
+public class Q9 { 
+  
+    
+    public static String merge(String s1, String s2) 
+    { 
+        
+        StringBuilder result = new StringBuilder(); 
+  
+        
+        for (int i = 0; i < s1.length() || i < s2.length(); i++) { 
+  
+            
+            if (i < s1.length()) 
+                result.append(s1.charAt(i)); 
+  
+            
+            if (i < s2.length()) 
+                result.append(s2.charAt(i)); 
+        } 
+  
+        return result.toString(); 
+    } 
+  
+    
+    public static void main(String[] args) 
+    { 
+        String s1 = "geeks"; 
+        String s2 = "forgeeks"; 
+        System.out.println(merge(s1, s2)); 
+    } 
+} 
+
+
+10.
+Given a string and an integer n, print a new string made of n repetitions of the last n characters of the string. 
+You may assume that n is between 0 and the length of the string, inclusive. 
+
+Example1)
+i/p:Wipro,3
+o/p:propropro
+
+import java.util.*;
+public class Q10
+{
+public String nTwice(String str, int n) 
+{
+  return str.substring(0,n) + str.substring(str.length()- n, str.length());
+}
+public static void main (String[] args)
+    {
+      Main m= new Main();
+      String str1 =  "Welcome";
+	  int n1 =  3;
+	  
+      System.out.println("The given strings is: "+str1);
+	  System.out.println("The given numbers is: "+n1);
+      System.out.println("The new string is: "+m.nTwice(str1,n1));
+	  }
+}

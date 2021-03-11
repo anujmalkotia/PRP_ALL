@@ -1,0 +1,5 @@
+f1=open('in1_ADID.txt','r')
+print(f1.tell())
+print(f1.seek(11))
+print(f1.seek(-11,2))
+print(f1.tell())

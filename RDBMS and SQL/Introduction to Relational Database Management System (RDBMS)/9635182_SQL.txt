@@ -1,0 +1,28 @@
+ To practice the exercises on your personal laptop or Desktop,
+1)   Install Oracle Database Express Edition (XE) Release 18.4.0.0.0 (18c) from  https://www.oracle.com/database/technologies/xe-downloads.html and during the installation ensure to install sample schema "HR".
+2) Run the command "sqlplus" in the command prompt or shell prompt as per the platform where Oracle is installed  & when being asked for user name enter "hr" and for password also enter "hr". On successful login, an SQL prompt will be displayed where SQL commands can be executed.
+ or
+Using SQL Developer: Create a database connection using the following information:
+Connection Name: myconnection
+Username: hr
+Password: hr
+Hostname: localhost
+Port: 1521
+SID: ORCL
+Ensure that you select the Save Password check box.
+Testing and Connecting Using the Oracle SQL Developer Database Connection
+If the status is Success, connect to the database using this new connection and run sql commands on a GUI Mode
+
+To practice online, follow below steps
+1.  Access the url 
+          https://livesql.oracle.com
+2. Create an Oracle account for you in the portal & sign in.
+3.  Once logged in, click on "SQL Worksheet" on the Left hand side panel to run SQL commands.
+4.  Ensure to prefix any HR schema objects with hr as shown below:
+      SELECT * FROM HR.EMPLOYEES 
+     OR
+     SELECT * FROM HR.DEPARTMENTS
+
+Note: You are free to explore other online simulators or mobile apps and use the best available one. 
+All the hands-on exercises will be utilizing "HR Schema".
+

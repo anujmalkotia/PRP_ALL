@@ -1,0 +1,20 @@
+1. Write a python script intr1_ADID.py for the below mentioned requirements.
+a. Print your first name on console.
+b. Print your employee number on console. 
+c. Print your company name on console. 
+
+print(""" Anuj
+9635182
+WIPRO""")
+
+ 2. Write a python script intr2_ADID.py for the below mentioned requirements.
+a. Read your first name from keyboard and display on console.
+b. Read your employee number from keyboard and display on console.
+c. Read your company name from keyboard and display on console. 
+
+f_name=input("Enter Your First Name:::")
+emp_no=eval(input("Enter Your Employee Number:::"))
+cmp_name=input("Enter Your Company Name:::")
+print("Name:",f_name ,
+      "Employee No:",emp_no ,
+      "Company Name:", cmp_name)

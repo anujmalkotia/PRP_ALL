@@ -1,0 +1,568 @@
+1.
+ A) Write a program to check if a given integer number is Positive, Negative, or Zero. 
+
+import java.util.Scanner;
+
+public class Q1A {
+   public static void main(String args[]){
+      int num;
+      System.out.println("Enter a number ::");
+      Scanner sc = new Scanner(System.in);
+      num = sc.nextInt();
+
+      if (num > 0){
+         System.out.println("Given number is a positive integer");
+      } else if(num < 0){
+         System.out.println("Given number is a negative integer");
+      } else {
+         System.out.println("Given number is neither positive nor negative integer");
+      }
+   }
+}
+
+B) Given two non-negative int values, print true if they have the same last digit, such as with 27 and 57. 
+
+     lastDigit(7, 17) → true
+     lastDigit(6, 17) → false
+     lastDigit(3, 113) → true
+
+import java.util.*;
+ public class Q1B {
+ public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input the first number : ");
+        int x = in.nextInt();  
+		System.out.print("Input the second number: ");
+		int y = in.nextInt(); 
+        System.out.print("The result is: "+test_last_digit(x, y,true));
+		System.out.print("\n");
+    }
+   
+    public static boolean test_last_digit(int p, int q, boolean xy)
+     {
+	     return (p % 10 == q % 10);
+     }
+}
+
+
+2.
+ Write a program to check if a given integer number is odd or even.
+
+import java.util.Scanner;
+
+class Q2
+{
+  public static void main(String args[])
+  {
+    int num;
+    System.out.println("Enter an Integer number:");
+
+   
+    Scanner input = new Scanner(System.in);
+    num = input.nextInt();
+
+        if ( num % 2 == 0 )
+        System.out.println("Entered number is even");
+     else
+        System.out.println("Entered number is odd");
+  }
+}
+
+3.
+ Write a program to check if the program has received command line arguments or not.
+
+If the program has not received arguments then print "No Values", else print all the values in a single line separated by ,(comma)
+
+Example1) java Example
+O/P: No values
+
+Example2) java Example Mumbai Bangalore
+O/P: Mumbai,Bangalore
+
+[Hint: You can use length property of an array to check its length]
+
+class Q3
+{
+    public static void main (String[] args)
+    {
+        
+        if (args.length ==0)
+            {
+            System.out.println("No Values");
+    }
+        else{
+            for(String i : args)     
+                System.out.print(i+" , ");
+       
+        }
+        }
+        }
+
+
+
+4.
+Initialize two character variables in a program and display the characters in alphabetical order.
+
+Example1) if the first character is 's' and second character is 'e' then the output should be  e,s
+
+Example2) if the first character is 'a' and second character is 'e', then the output should be a,e
+
+class Q4
+{
+    public static void main (String[] args)
+    {
+        char item1='a';
+        char item2='b';
+        if (item1>item2)
+            System.out.println(item2+" , "+item1);
+       
+        else
+            System.out.println(item1+" , "+item2);
+    }
+    }
+
+
+5.
+Initialize a character variable in a program and 
+
+print 'Alphabhet' if the initialized value is an alphabhet, 
+
+print 'Digit' if the initialized value is a number, and 
+
+print 'Special Character', if the initialized value is anything else.
+
+import java.util.*;
+class Q5{
+public static void main(String args[])
+    {
+        Scanner scanner=new Scanner(System.in);
+        char char1 =scanner.next().charAt(0);
+        if((char1>=48 && char1<=57) || char1 == 45)
+        {
+            System.out.print("char is Digit");
+
+        }
+        else if((char1>='a' && char1<='z')||(char1>='A' && char1<='Z'))
+        {
+            System.out.print("char is Alphabet");
+        }
+        else
+        {
+            System.out.print("char is special character");
+
+        }
+    }
+}
+
+6.
+Write a program to accept gender ("Male" or "Female") and age from command line arguments and print the percentage of interest based on the given conditions.
+
+If the gender is 'Female' and age is between 1 and 58, the percentage of interest is 8.2%.
+
+If the gender is 'Female' and age is between 59 and 100, the percentage of interest is 9.2%.
+
+If the gender is 'Male' and age is between 1 and 58, the percentage of interest is 8.4%.
+
+If the gender is 'Male' and age is between 59 and 100, the percentage of interest is 10.5%.
+
+public class Q6{
+    public static void main(String[] args)
+    {
+        String Gender = args[0];
+        int age = Integer.parseInt(args[1]);
+        if(args.length==0)
+        {
+            System.out.println("Empty Arguments");
+        }  
+        else{
+            if(Gender.equals("Male") || Gender.equals("Female"))
+            {
+                if(age>1 && age<=100)
+                {
+                    if (Gender.equals("Female") && (age >= 1 && age <= 58)) {
+                        System.out.println("Interest == 8.2%");
+                    } else if (Gender.equals("Female") && (age >= 59 && age <= 100)) {
+                        System.out.println("Interest == 9.2%");
+                    } else if (Gender.equals("Male") && (age >= 1 && age <= 58)) {
+                        System.out.println("Interest == 8.4%");
+                    } else if (Gender.equals("Male") && (age >= 59 && age <= 100)) {
+                        System.out.println("Interest == 10.5%");
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+7.
+ Initialize a character variable with an alphabhet in a program.
+
+If the character value is in lowercase, the output should be displayed in uppercase in the following format.
+
+Example1)
+i/p:a
+o/p:a->A
+
+If the character value is in uppercase, the output should be displayed in lowercase in the following format.
+
+Example2)
+i/p:A
+o/p:A->a
+
+public class Q7 {    
+    public static void main(String[] args) {    
+            
+        String str1="Great Power";    
+        StringBuffer newStr=new StringBuffer(str1);    
+            
+        for(int i = 0; i < str1.length(); i++) {    
+                
+                
+            if(Character.isLowerCase(str1.charAt(i))) {    
+                    
+                newStr.setCharAt(i, Character.toUpperCase(str1.charAt(i)));    
+            }    
+              
+            else if(Character.isUpperCase(str1.charAt(i))) {    
+                    
+                newStr.setCharAt(i, Character.toLowerCase(str1.charAt(i)));    
+            }    
+        }    
+        System.out.println("String after case conversion : " + newStr);    
+    }    
+}     
+
+
+
+
+8.
+ Write a program to receive a color code from the user (an Alphabhet). 
+
+The program should then print the color name, based on the color code given. 
+
+The following are the color codes and their corresponding color names.
+R->Red, B->Blue, G->Green, O->Orange, Y->Yellow, W->White. 
+
+If color code provided by the user is not valid then print "Invalid Code". 
+
+import java.util.*;
+public class Q8 {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    String s1 = s.next();
+    boolean b = colorCodeValidation(s1);
+    if (b == true)
+      System.out.println("Valid");
+    else
+      System.out.println("Invalid");
+  }
+  public static boolean colorCodeValidation(String s1) {
+    boolean b = false, b1 = false;
+    String s2 = s1.substring(1, s1.length());
+    if (s1.length() == 7)
+      if (s1.charAt(0) == '#')
+        b1 = true;
+    if (b1 == true)
+      for (int i = 0; i < s2.length(); i++) {
+        char c = s2.charAt(i);
+        if (c != '#') {
+          if (s2.matches("[A-F]{1,}") || s2.matches("[0-9]{1,}"))
+            b = true;
+          else {
+            b = false;
+            break;
+          }
+        }
+      }
+    return b;
+  }
+}
+
+
+9.
+Write a program to receive a number and print the corresponding month name.
+
+Example1)
+
+C:\>java Sample 12
+
+O/P Expected : December
+
+Example2)
+
+C:\>java Sample 
+
+O/P Expected : Please enter the month in numbers
+
+Example3)
+
+C:\>java Sample 15
+
+O/P Expected : Invalid month
+
+import javax.swing.JOptionPane;
+
+public class Q9 {
+
+   public static void main(String[] args) {
+
+    int num = Integer.parseInt (JOptionPane.showInputDialog ("Enter any number equal to or between 1-12 to display the month"));
+
+    switch (num)
+    {
+    case 1:
+        System.out.println ("The name of month number 1 is January");
+        break;
+    case 2:
+        System.out.println ("The name of month number 2 is February");
+        break;
+    case 3:
+        System.out.println ("The name of month number 3 is March");
+        break;
+    case 4:
+        System.out.println ("The name of month number 4 is April");
+        break;
+    case 5:
+        System.out.println ("The name of month number 5 is May");
+        break;
+    case 6:
+        System.out.println ("The name of month number 6 is June");
+        break;
+    case 7:
+        System.out.println ("The name of month number 7 is July");
+        break;
+    case 8:
+        System.out.println ("The name of month number 8 is August");
+        break;
+    case 9:
+        System.out.println ("The name of month number 9 is September");
+        break;
+    case 10:
+        System.out.println ("The name of month number 10 is October");
+        break;
+    case 11:
+        System.out.println ("The name of month number 11 is November");
+        break;
+    case 12:
+        System.out.println ("The name of month number 12 is December");
+        break;
+        default:
+            System.out.println ("You have entered an invalid number");
+        }
+    } 
+}
+
+
+10.
+ Write a program to print numbers from 1 to 10 in a single row with one tab space.
+
+public class Q10
+{
+    public static void main(String[] args)
+    {
+        for(int i = 1; i <= 10; i++)
+        {
+            System.out.println(i + "\t");
+        }
+    }
+}
+
+
+
+
+11.
+ Write a program to print even numbers between 23 and 57. Each number should be printed in a separate row.
+
+class Q11 {
+   public static void main(String args[]) {
+	int n = 100;
+	System.out.print("Even Numbers from 1 to "+n+" are: ");
+	for (int i = 1; i <= n; i++) {
+	   
+	   if (i % 2 == 0) {
+		System.out.print(i + "\t");
+	   }
+	}
+   }
+}
+
+
+12.
+ Write a program to check if a given number is prime or not.
+
+public class Q12{    
+ public static void main(String args[]){    
+  int i,m=0,flag=0;      
+  int n=3;   
+  m=n/2;      
+  if(n==0||n==1){  
+   System.out.println(n+" is not prime number");      
+  }else{  
+   for(i=2;i<=m;i++){      
+    if(n%i==0){      
+     System.out.println(n+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  { System.out.println(n+" is prime number"); }  
+  }
+}    
+}   
+
+
+13.
+Write a program to print prime numbers between 10 and 99.
+class Q13
+{
+   public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+       //Empty String
+       String  primeNumbers = "";
+
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     //Appended the Prime number to the String
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
+}
+
+
+
+14.
+ Write a program to print the sum of all the digits of a given number.
+
+Example1) 
+I/P:1234
+O/P:10
+
+
+
+
+15.
+Write a program to print * in Floyds format (using for and while loop)
+*
+*  *
+*  *   *
+
+Example1)
+C:\>java Sample 
+O/P: Please enter an integer number
+
+Example2)
+C:\>java Sample 3
+O/P :
+*
+*  * 
+*  *  *
+
+import java.util.Scanner;
+ 
+class Q15
+{
+  public static void main(String args[])
+  {
+    int n, num = 1, c, d;
+    Scanner in = new Scanner(System.in);
+ 
+    System.out.println("Enter the number of rows of Floyd's triangle to display");
+    n = in.nextInt();
+ 
+    System.out.println("Floyd's triangle:");
+ 
+    for (c = 1; c <= n; c++)
+    {
+      for (d = 1; d <= c; d++)
+      {
+        System.out.print("*"+" ");
+        num++;
+      }
+ 
+      System.out.println(); // Moving to next row
+    }
+  }
+}
+
+
+
+16.
+Write a program to reverse a given number and print
+
+Example1)
+I/P: 1234
+O/P:4321
+
+Example2)
+I/P:1004
+O/P:4001
+
+public class Q16 {
+
+    public static void main(String[] args) {
+
+        int num = 1234, reversed = 0;
+
+        while(num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+
+        System.out.println("Reversed Number: " + reversed);
+    }
+}
+
+
+17.
+ Write a Java program to find if the given number is palindrome or not
+
+Example1)
+C:\>java Sample 110011
+O/P: 110011 is a palindrome
+
+Example2)
+C:\>java Sample 1234
+O/P: 1234 is not a palindrome
+
+
+public class Q17 {
+
+    public static void main(String[] args) {
+
+        int num = 121, reversedInteger = 0, remainder, originalInteger;
+
+        originalInteger = num;
+
+        
+        while( num != 0 )
+        {
+            remainder = num % 10;
+            reversedInteger = reversedInteger * 10 + remainder;
+            num  /= 10;
+        }
+
+        
+        if (originalInteger == reversedInteger)
+            System.out.println(originalInteger + " is a palindrome.");
+        else
+            System.out.println(originalInteger + " is not a palindrome.");
+    }
+}

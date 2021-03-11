@@ -1,0 +1,30 @@
+Process Management
+
+1. Start sleep 1000 command in the back ground with the highest priority. Run the jobs command to confirm. Also run the ps  -l command and observe the priority and nice value.
+
+$ sleep 1000
+$ jobs
+
+
+2. Run jobs  -l  command and observe the difference with the jobs command output.
+
+$jobs -l
+
+3. Move the above job from back ground to foreground
+
+[CTRL-Z]
+$ fg 1
+
+4. Move the job back to back ground.
+[CTRL-Z]
+$ bg
+
+
+5. Change the priority of the process to the lowest. Run  ps  -l command and observe the priority and nice value.
+
+$nice -15 cmus &
+
+
+6. Kill the above process with the signal 9
+
+$ kill -9 13957

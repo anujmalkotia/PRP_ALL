@@ -1,0 +1,9 @@
+1. Display first names(First letter in caps) and their jobs(in Uppercase) of all employees.
+
+SELECT UPPER(LEFT(word,1))+LOWER(SUBSTRING(word,2,LEN(first_name))) FROM employees
+
+2.Display the employee names(First Name) and their year of joining.
+
+SELECT First_name , extract(year from to_date(hire_date)) from employees
+
+3. Display the character position of "O" in the string WIPRO.

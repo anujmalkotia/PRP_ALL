@@ -1,0 +1,131 @@
+System Administration – Part 1
+
+1.
+
+a) List all the files including the hidden files along with their properties under the directories  /etc & /tmp 
+
+$ls -a /etc
+$ls -a /tmp
+
+b) List all the files including the hidden files along with their properties under the directories  /etc & /tmp 
+
+$man man
+
+c)  Create a new empty file Myfile1_ADID in your home directory. For example if your ADID is HA566308 then Myfile1_ADID will become Myfile1_HA566308
+
+$touch Myfile1_ADID
+
+d) Display the statistics of the file Myfile1_ADID using the stat command
+
+$stat Myfile1_ADID
+
+e) Update all the timestamps of the file Myfile1_ADID & confirm using stat command
+
+$ touch -d "2 hours ago" Myfile_ADID
+$ stat Myfile_ADID
+
+f) f. Update only the access time of the file Myfile1_ADID and confirm using stat command
+
+$ touch -a Myfile_ADID
+$ stat Myfile_ADID
+
+
+2.Create the following files in your current directory:
+
+prog1_ADID.c  prog2_ADID.c  app1_ADID.c  app2_ADID.c  app12_ADID.c app11_ADID.c prg1_ADID.java   prg2_ADID.java
+
+$ touch prog1_ADID.c  prog2_ADID.c  app1_ADID.c  app2_ADID.c  app12_ADID.c app11_ADID.c prg1_ADID.java   prg2_ADID.java
+
+a) Long list all the java files & c files in the current directory 
+
+$ find . -type f -name "*.c"
+$ find . -type f -name "*.java"
+
+b) List all the c programs in the current directory which starts with app
+
+$ find . -type f -name "app*"
+.
+c) Long list all the c programs which starts with app and the 4th & 5th letters are either 1 or 2
+$ ls -d app[12].c*
+
+
+d) List all the files which starts with app and the 4th letter is not 2
+
+$ls -d app
+
+e) List all the 7 letter c programs starting with prog
+
+$ ls -d prog???????.c*
+
+f) Remove all the .c files in the current directory [Hint: rm command removes files]
+
+$ rm -f *.c
+
+3. Create a directory path as below under /root :
+                                 India_ADID
+Karnataka_ADID         Tamilnadu_ADID            Kerala_ADID
+Bangalore_ADID         Chennai_ADID               Munnar_ADID
+
+$ sudo -s
+[sudo] password for anujmalkotia: 
+root@ubuntu:/# whoami
+root
+$ mkdir India_ADID Karnataka_ADID Tamilnadu_ADID kerela_ADID Bangalore_ADID Chennai_ADID Munnar_ADID
+
+a) Change to your home directory. Create an empty file called place_2_see_ADID in Munnar_ADID.
+
+$ cd Munnar_ADID
+$ touch place_2_see_ADID
+
+b) Copy that file to India_ADID.
+
+$ cp place_2_see_ADID /home/anujmalkotia/India_ADID
+
+c) Change the name of the file you copied in India_ADID as very_good_place_ADID.
+
+$ mv place_2_see_ADID very_good_place_ADID
+
+d) Go to Chennai_ADID directory, list the content of the directory called India_ADID from there.
+
+$ cd Chenanai_ADID
+$ ls home/anujmalkotia/India_ADID
+
+e) Being at Chennai_ADID directory, delete the place_2_see_ADID file.
+
+$ rm /home/anujmalkotia/Munnar_ADID/place_2_see_ADID
+
+f)  Remaining at Chennai_ADID directory, remove Bangalore_ADID directory.
+
+$ rmdir /home.anujmalkotia/Bangalore_ADID
+
+6.
+a) Search for all the .conf  files under /etc
+
+$ cd /
+$ cd etc
+$ find . -type f -name "*.conf"
+
+b) Search for all the .conf files under /etc which are of more than 10KB in size
+
+$ find . -type f -name "*.conf" -size +10k
+
+c) Find all the files in the system bigger than 100KB in size and not accessed in the last 1 year
+
+$ find . -type f -size +100k -atime 365
+
+d) Search for all the files which are bigger than 800 bytes or not accessed in the last 1 week.
+
+$ find . -type f -size +800b -atime 7
+
+7.
+a) Display the details of the user root along with the line number from the file /etc/passwd
+
+$ cat -n etc/passwd
+
+b) Display the number of users with the login shell of bash [ Ref  /etc/passwd file ]
+
+$ cat /etc/passwd | grep -c "/bin/bash"
+
+c) Display all the users whose login shell is not bash
+
+awk -F: '$3 >= 1000' /etc/passwd

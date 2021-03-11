@@ -1,0 +1,50 @@
+IP addressing and Subnetting
+
+Q1. Your router has the address 172.16.2.1/23 on the ethernet interface. Which IP address can be assigned to a host connected to the ethernet interface of the router and what will be that host's default gateway?
+Ans. The router's IP address on the E0 interface is 172.16.2.1/23, which is 255.255.254.0. This makes the third octet a block size of 2. The router's interface is in the 2.0 subnet, and the broadcast address is 3.255 because the next subnet is 4.0. The valid host range is 2.1 through 3.254. The router is using the first valid host address in the range.
+
+
+Q2. If a host on a network has the address 172.16.45.14/30, what is the address of the subnetwork to which this host belongs?
+Ans. 172.16.45.12
+A/30, regardless of the class of address, has a 252 in the fourth octet. This means we have a block size of 4 and our subnets are o,4,8,12,16, etc. 
+Address 14 is obviously in the 12 subnet.
+
+
+Q3. Which of the addresses below are valid host addresses of the subnet to which the host 192.168.15.19/28 belongs? 
+A)	192.168.15.17 B) 192.168.15.29 C) 192.168.15.14
+Ans. A) 192.168.15.17 B) 192.168.15.29
+
+The network uses a 28bit subnet (255.255.255.240). This means that 4 bits are used for the networks and 4 bits for the hosts. This allows for 14 networks 
+and 14 hosts (2n-2).The last bit used to make 240 is the 4th bit (16) therefore the first network will be 192.168.15.16. The network will have 16 addresses 
+(but remember that the first address is the network address and the last address is the broadcast address). In other words, the networks will be in increments 
+of 16 beginning at 192.168.15.16/28. The IP address we are given is 192.168.15.19. Therefore the other host addresses must also be on this network. Valid IP 
+addresses for hosts on this network are: 192.168.15.17-192.168.15.30.
+
+
+
+Q4. The ABC LTD network was assigned the Class C network 199.166.131.0 from the ISP. If the administrator at ABC LTD were to subnet this class C network using 
+the 255.255.255.224 subnet mask, how may hosts will they be able to support on each subnet?
+Ans.
+30
+The subnet mask 255.255.255.224 is a 27 bit mask (11111111.11111111.11111111.11100000). It uses 3 bits from the last octet for the network ID, leaving 5 bits 
+for host addresses. We can calculate the number of hosts supported by this subnet by using the 2n-2 formula where n represents the number of host bits. In this 
+case it will be 5. 25-2 gives us 30.
+
+
+
+Q5. Your network uses the172.12.0.0 class B address. You need to support 459 hosts per subnet, while accommodating the maximum number of subnets. Which subnet 
+mask would you use?
+Ans. 255.255.254.0.
+To obtain 459 hosts the number of host bits will be 9. This can support a maximum of
+510 hosts. To keep 9 bits for hosts means the last bit in the 3rd octet will be 0. This gives
+255.255.254.0 as the subnet mask.
+
+
+Q6. What is the valid host IP address range for the network 115.54.4.0 with CIDR value /22?
+Ans. Given CIDR block of 115.54.4.0 /22:subnet mask : 255.255.252.0theIP address range would be 115.54.4.1 to 115.54.7.254.Therefore, 115.54.5.128 ,115.54.6.255  
+and 115.54.7.64
+
+
+
+
+

@@ -1,0 +1,7 @@
+f1=open('in1_ADID.txt','r')
+list1_ADID = f1.readlines()
+print (list1_ADID)
+print(len(list1_ADID))
+f1.close()
+f2=open('in1_ADID.txt','r')
+print(f2.read())

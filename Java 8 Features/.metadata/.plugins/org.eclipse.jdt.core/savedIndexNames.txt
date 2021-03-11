@@ -1,0 +1,14 @@
+INDEX VERSION 1.131+D:\ANUJ\WIPRO\Java 8 Features\.metadata\.plugins\org.eclipse.jdt.core
+1970015055.index
+3976123704.index
+1454112807.index
+1757257124.index
+985733215.index
+866875185.index
+119754236.index
+1579092615.index
+2997152378.index
+199786040.index
+393160600.index
+3633567182.index
+790406476.index

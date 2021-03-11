@@ -1,0 +1,114 @@
+ 1. Write a python script exception1_ADID.py for the below mentioned requirements.
+a. Open the file, newfile1_ADID.txt from your current working directory in read mode. This file is not there in current working directory. 
+b. Which type of error will get for above mentioned scenario?
+c. Handle the exception using different blocks such as try, except and finally for above mentioned scenario. 
+
+try:
+    f1=open('newfile1_ADID.txt','r')
+except FileNotFoundError:
+    print("ERROR")
+
+
+ 2. Write a python script exception2_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 and num2_ADID with value 0 from keyboard.
+b. Use casting operator int( ) on num1_ADID and num2_ADID. Then, divide num1_ADID by num2_ADID and store result in div1_ADID. Display the result div1_ADID on console. 
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario. 
+
+try:
+    num1_ADID=eval(input("Enter 1st number::"))
+    num2_ADID=eval(input("Enter 2nd number::"))
+    div1_ADID=int(num1_ADID/num2_ADID)
+    print(div1_ADID)
+except ZeroDivisionError:
+    print("ZeroDivisionError")
+finally:
+    print("program executed")
+
+
+
+ 3. Write a python script exception3_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 from keyboard.
+b. Use casting operator int( ) on num1_ADID. Then, add num1_ADID with num2_ADID and store result in sum1_ADID. Display the result sum1_ADID on console. 
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario
+
+try:
+    num1_ADID=eval(input('Enter a number:::'))
+    sum1_ADID=int(num1_ADID + num2_ADID)
+    print(sum1_ADID)
+except NameError:
+    print("NameError")
+finally:
+    print("program executed")
+
+
+4. Write a python script exception4_ADID.py for the below mentioned requirements.
+a. Create an dictionary dict3_ADID as follows: 
+dict3_ADID = {“k1” : 10,  “k2” : 20,  “k3” : 30}
+b. Print the dict3_ADID[“k5”] on console.
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario. 
+
+try:
+    dict3_ADID = {'k1' : 10,  'k2' : 20,  'k3' : 30}
+    print(dict3_ADID['k5'])
+except KeyError:
+    print('KeyError')
+finally:
+    print ('program executed')
+
+
+ 5. Write a python script exception5_ADID.py for the below mentioned requirements.
+a. Create an list list3_ADID as follows: 
+list3_ADID = [10, 20, 30, 40, 50]
+b. Print the list3_ADID[7] on console.
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario.
+
+try:
+    list3_ADID = [10, 20, 30, 40, 50]
+    list3_ADID[7]
+except IndexError:
+    print('IndexError')
+finally:
+    print('program executed')
+
+
+6. Write a python script exception6_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 and num2_ADID with value 85 from keyboard.
+b. Subtract num1_ADID from num2_ADID and store result in sub1_ADID. Display the result sub1_ADID on console. 
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario.
+
+try:
+    num1_ADID=input('Enter 1st number::')
+    num2_ADID=input('Enter 2nd number::')
+    sub1_ADID=num1_ADID - num2_ADID
+    print(sub1_ADID)
+except TypeError:
+    print('TypeError')
+finally:
+    print('program executed')
+
+
+ 7. Write a python script exception7_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 and num2_ADID with value 85 from commandline.
+b. Python code given as follows:
+num1_ADID=sys.argv[1]
+num2_ADID=sys.argv[1] 
+print(num1_ADID)
+print(num2_ADID)
+
+c. Which type of error will get for above mentioned scenario?
+d. Handle the exception using different blocks such as try, except and finally for above mentioned scenario.
+
+try:
+    num1_ADID=sys.argv[1]
+    num2_ADID=sys.argv[1] 
+    print(num1_ADID)
+    print(num2_ADID)
+except NameError:
+    print('NameError')
+finally:
+    print('program executed')

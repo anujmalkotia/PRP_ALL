@@ -1,0 +1,87 @@
+1. Write a python script readkey1_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 from keyboard
+b. Read num2_ADID with value 200 from keyboard
+c. Add num1_ADID and num2_ADID and store result in sum1_ADID. Display the result sum1_ADID on console. 
+d. Is there any observation in output? Please give justification. 
+
+num1_ADID=eval(input('ENTER NUMBER'))
+num2_ADID=eval(input('ENTER NUMBER'))
+sum1_ADID= num1_ADID + num2_ADID
+print(sum1_ADID)
+
+OUTPUT
+ENTER NUMBER100
+ENTER NUMBER200
+300
+
+Yes the output displayed is 300, because of the addition operator used in above Python code.
+
+2. Write a python script readkey2_ADID.py for the below mentioned requirements.
+a. Read num1_ADID with value 100 from keyboard. 
+b. Read num2_ADID with value 200 from keyboard
+c. Add num1_ADID and num2_ADID and store result in sum1_ADID. Display the result sum1_ADID on console. 
+d. Use casting operator int( ) on num1_ADID and num2_ADID. Then, add num1_ADID and num2_ADID and store result in sum1_ADID. Display the result sum1_ADID on console. 
+e. Is there any observation in output? Please give justification.
+
+num1_ADID=eval(input('ENTER NUMBER'))
+num2_ADID=eval(input('ENTER NUMBER'))
+sum1_ADID= int(num1_ADID + num2_ADID)
+print(sum1_ADID)
+
+OUTPUT:
+ENTER NUMBER100
+ENTER NUMBER200
+300
+
+3. Write a python script readkey3_ADID.py for the below mentioned requirements.
+a. Read 5 linux usernames from keyboard. The linux usernames are user1_ADID, user2_ADID, user3_ADID, user4_ADID, user5_ADID.
+b. Store these usernames in list and name the list as userlist_ADID.
+c. Display the elements of userlist_ADID list on console.
+d. Display the elements of userlist_ADID on console using for loop. 
+Hint: Use for loop 
+
+user1_ADID=input("ENTER LINUX USERNAME::")
+user2_ADID=input("ENTER LINUX USERNAME::")
+user3_ADID=input("ENTER LINUX USERNAME::")
+user4_ADID=input("ENTER LINUX USERNAME::")
+user5_ADID=input("ENTER LINUX USERNAME::")
+userlist_ADID = [user1_ADID,user2_ADID,user3_ADID,user4_ADID,user5_ADID]
+print(userlist_ADID)
+for i in userlist_ADID:
+    print(i)
+
+4. Write a python script readkey4_ADID.py for the below mentioned requirements.
+a. Read 5 linux usernames from keyboard. The linux usernames are user1_ADID, user2_ADID, user3_ADID, user4_ADID, user5_ADID.
+b. Store these usernames in list and name the list as userlist_ADID.
+c. Read 5 CIS stream names from keyboard. The CIS stream names are unix_ADID, wintel_ADID, networking_ADID, helpdesk_ADID and bsm_ADID. 
+d. Store these CIS stream names in list and name the list as stream_ADID.
+e. Create a dictionary userdict_ADID. The key of dictionary is username stored in userlist_ADID. 
+The value for corresponding key is stream name stored in stream_ADID. 
+For example: 
+Key1 -> user1_ADID and Value1 -> UNIX_ADID.
+Key2 -> user2_ADID and Value2 -> WINTEL_ADID etc…..
+Hint: Use for loop 
+
+f. Display the content of dictionary userdict_ADID on console.
+Hint: Use for loop 
+
+user1_ADID=input("ENTER LINUX USERNAME::")
+user2_ADID=input("ENTER LINUX USERNAME::")
+user3_ADID=input("ENTER LINUX USERNAME::")
+user4_ADID=input("ENTER LINUX USERNAME::")
+user5_ADID=input("ENTER LINUX USERNAME::")
+userlist_ADID = [user1_ADID,user2_ADID,user3_ADID,user4_ADID,user5_ADID]
+unix_ADID=input("ENTER CIS STREAM:::")
+wintel_ADID=input("ENTER CIS STREAM:::")
+networking_ADID=input("ENTER CIS STREAM:::")
+helpdesk_ADID=input("ENTER CIS STREAM:::")
+bsm_ADID=input("ENTER CIS STREAM:::")
+stream_ADID=[unix_ADID, wintel_ADID, networking_ADID, helpdesk_ADID,bsm_ADID]
+userdict_ADID={}
+for key in userlist_ADID:
+    for value in stream_ADID:
+        userdict_ADID[key]=value
+        stream_ADID.remove(value)
+        break
+print(userdict_ADID)
+

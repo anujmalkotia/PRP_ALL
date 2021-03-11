@@ -1,0 +1,32 @@
+1. Determine the structure of the DEPARTMENTS table and its contents.
+
+DESC HR.DEPARTMENTS;
+SELECT * FROM HR.DEPARTMENTS;
+
+
+2. Create a query to display the last name, job ID, hire date, and employee ID for each employee, with the employee ID appearing first. Provide an alias STARTDATE for the HIRE_DATE column.
+Create a query to display the last name, job ID, hire date, and employee ID for each employee, with the employee ID appearing first. Provide an alias STARTDATE for the HIRE_DATE column.
+
+select employee_id, last_name, job_id, hire_date startdate
+from hr.employees;
+
+
+3. Create a query to display all unique job IDs from the EMPLOYEES table.
+
+SELECT DISTINCT job_id 
+	FROM hr.employees;
+
+
+4.Create a query to display employee id, last name, job id and hiredate from employee table with more describing column names.  Name the column headings 
+Emp # , Employee , Job and Hire Date respectively.
+
+select employee_id “EmP#”, last_name “Employee”, job_id “Job”, hire_date “Hire Date”
+from hr.employees;
+
+
+5. Create a report of all employees and their job IDs. Display the last name concatenated with the job ID (separated by a comma and space) and name the column as "Employee and Title"
+
+select last_name||', '||job_id "Employee and Title" from hr.employees;
+
+
+

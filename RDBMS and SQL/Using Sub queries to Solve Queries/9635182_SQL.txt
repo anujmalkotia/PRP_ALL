@@ -1,0 +1,49 @@
+1. Display the first name & salary of all the employees who are getting salary greater than "Bruce".
+
+SELECT employee_id, last_name, salary
+FROM employees
+WHERE salary > (SELECT first_name
+                FROM employees
+                where first_name='Bruce')
+ORDER BY salary;
+
+2. Display the last name,department ID,job & salary of those employees who are working in the same department of "Neena" and having the same job.
+
+SELECT first_name, last_name, salary, department_id  
+FROM employees  
+WHERE salary IN  
+( SELECT MIN(salary)  
+FROM employees  
+GROUP BY department_id 
+);
+
+3. Display the first name & salary of all the employees who are getting salary less than the average salary of the company.
+
+SELECT employee_id, salary
+FROM employees
+WHERE salary < (SELECT AVG(salary)
+ FROM employees)
+ORDER BY salary;
+
+4.	
+ Display the first Name & salary of the employees who are getting salary greater than that of both "Bruce" and "Alexander"
+
+SELECT first_name, salary
+FROM employees
+WHERE salary > (SELECT first_name
+ 		FROM employees
+		WHERE first_name='Bruce' and 'Alexander')
+
+
+
+
+5. Display the first name & salary of the employees who are getting salary equal to that of either "Neena" or "John".
+
+
+6. Display the deptno and average salary of the dept which is less than the average salary of the organization.
+
+
+7. Display the details of departments which do not have any employees.
+SELECT * FROM departments 
+WHERE department_id 
+NOT IN (select department_id FROM employees);

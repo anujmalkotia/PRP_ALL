@@ -1,0 +1,167 @@
+1. Write a python script list1_ADID.py which contains the list as follows:
+mylist1_ADID = [ 10, 20, 30, 40, 50, 60, 70]
+print(mylist1_ADID[3])
+print(mylist1_ADID[5])
+print(mylist1_ADID[-1])
+print(mylist1_ADID[-3])
+
+Run this python script and display the result on console.
+
+OUTPUT:
+40
+60
+70
+50
+
+2. Create a list mylist2_ADID consists of 10 elements. Elements will have 5 numbers and 5 strings. 
+
+a. Print the contents of mylist2_ADID on console.
+b. Add one element 100, at the end of list mylist2_ADID. Use appropriate function to do this task. Print the contents of mylist2_ADID on console.
+c. Add one element “wipro”, at the end of list mylist2_ADID. Use appropriate function to do this task. Print the contents of mylist2_ADID on console.
+
+mylist2_ADID = [ 1,2,3,4,5,'a','b','c','d','e']
+for i in mylist2_ADID:
+    print(i)
+mylist2_ADID.append(100)
+print(mylist2_ADID)
+mylist2_ADID.append('wipro')
+print(mylist2_ADID)
+
+3. Create a list mylist3_ADID consists of 5 elements. All Elements are strings. 
+
+a. Print the contents of mylist3_ADID on console.
+b. Add one element “Bangalore”, at the beginning of list mylist3_ADID. Use appropriate function to do this task. Print the contents of mylist3_ADID on console.
+c. Remove one element from the end of list mylist3_ADID. Use appropriate function to do this task. Print the contents of mylist3 on console.
+
+mylist3_ADID=['a','b','c','d','e']
+for i in mylist3_ADID:
+    print(i)
+mylist3_ADID.insert(0,'Bangalore')
+print(mylist3_ADID)
+mylist3_ADID.pop()
+print(mylist3_ADID)
+
+
+4. Create a list mylist4_ADID consists of 5 elements. All Elements are numbers. 
+
+a. Print the contents of mylist4_ADID on console.
+b. Use reverse() function on mylist4_ADID and display the contents on console.
+c. Create another list, m1_ADID = [5, 10, 15]. Add this list m1_ADID at the end of mylist4_ADID list. Use appropriate function.
+
+mylist4_ADID=[1,2,3,4,5]
+for i in mylist4_ADID:
+    print(i)
+mylist4_ADID.reverse()
+print(mylist4_ADID)
+m1_ADID=[5,10,15]
+mylist4_ADID.extend(m1_ADID)
+print(mylist4_ADID)
+
+5. Create a tuple mytuple1_ADID consists of 10 elements. All Elements are numbers. 
+
+a. Print the contents of tuple mytuple1_ADID on console.
+b. Add new element to this tuple as follows:
+mytuple1_ADID[1] = 100. What will be the output and give justification for this.
+
+mytuple1_ADID=(1,2,3,4,5,6,7,8,9,10)
+for i in mytuple1_ADID:
+    print(i)
+mytuple1_ADID[1] = 100
+
+OUTPUT:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Traceback (most recent call last):
+  File "C:/Users/chinu/Desktop/test.py", line 4, in <module>
+    mytuple1_ADID[1] = 100
+TypeError: 'tuple' object does not support item assignment
+
+Because Tuples in python are immutable, ie they cannot be modified.
+
+6. Create a tuple mytuple2_ADID consists of 5 elements. All Elements are strings. 
+
+a. Print the contents of tuple mytuple1_ADID on console.
+b. Print the first element of tuple mytuple1_ADID on console.
+c. Add new element to this tuple as follows:
+mytuple1_ADID[1] = 100. What will be the output and give justification for this.
+
+mytuple2_ADID=('a','b','c','d','e')
+for i in mytuple2_ADID:
+    print(i)
+print(mytuple2_ADID[0])
+mytuple1_ADID[1] = 100
+
+OUTPUT:
+
+a
+b
+c
+d
+e
+a
+Traceback (most recent call last):
+  File "C:\Users\chinu\Desktop\test.py", line 5, in <module>
+    mytuple1_ADID[1] = 100
+NameError: name 'mytuple1_ADID' is not defined
+
+Because Tuples in python are immutable, ie they cannot be modified.
+
+ 7. Create an dictionary dict1_ADID as follows: 
+dict1_ADID = {“k1” : 10,  “k2” : 20,  “k3” : 30}
+
+a. Print the dictionary dict1_ADID on console.
+b. Print all the keys in dictionary dict1_ADID. Use appropriate function.
+c. Print all the values in dictionary dict1_ADID. Use appropriate function.
+
+dict1_ADID = {'k1' : 10,  'k2' : 20,  'k3' : 30}
+for x in dict1_ADID:
+  print(dict1_ADID[x])
+for y in dict1_ADID:
+  print(y)
+
+8. Create an dictionary dict2_ADID as follows: 
+dict1_ADID = {“Bangalore” : 1,  “Chennai” : 2,  “Kochi” : 3}
+
+a. Print the dictionary dict2_ADID on console.
+b. Add new element to dictionary dict2_ADID. 
+Key is “Hyderabad” and value is 4. Print the dictionary dict2_ADID.
+c. Delete the key “Kochi” from the dictionary dict2_ADID. Print the dictionary dict2_ADID.
+d.  Delete all the elements of dictionary dict2_ADID using appropriate function. Print the dictionary dict2_ADID.
+
+dict2_ADID = {'Bangalore' : 1,  'Chennai' : 2,  'Kochi' : 3}
+for x, y in dict2_ADID.items():
+  print(x, y)
+dict
+dict2_ADID["Hyderabad"] = 4
+print(dict2_ADID)
+dict2_ADID.pop("Kochi")
+print(dict2_ADID)
+del dict2_ADID
+
+
+9. Create a string s1_ADID initialized with “we are learning Python”. 
+a. Find the length of string s1_ADID and display on console.
+b. Print how many times ‘e’ occurs in string s1_ADID.
+c. What will be the output of s1_ADID.split(‘  ‘). Here ‘  ‘ is whitespace, which is delimiter.
+
+
+s1_ADID="we are learning Python"
+print(len(s1_ADID))
+count = 0
+for i in s1_ADID: 
+    if i == 'e': 
+        count = count + 1
+print (count)
+s1_ADID.split(‘  ‘)
+
+
+

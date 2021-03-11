@@ -1,0 +1,47 @@
+1. Write a query to produce the addresses of all the departments. Use the LOCATIONS and COUNTRIES tables. Show the location ID, street address, city, state or province, and country in the output. Use a NATURAL JOIN to produce the results.
+
+SELECT location_id, street_address, city, state_province,
+country_name
+FROM locations
+NATURAL JOIN countries; 
+
+2. Create a report of only those employees with corresponding departments. Write a query to display the last name, department number and department name for these employees.
+SELECT last_name, department_id, department_name
+FROM employees
+JOIN departments
+USING (department_id); 
+
+
+3.Create a report of employees in Toronto. Display the last name, job, department number and the department name for all employees who work in Toronto.
+
+SELECT e.last_name, e.job_id, e.department_id,
+d.department_name
+FROM employees e JOIN departments d
+ON (e.department_id = d.department_id)
+JOIN locations l
+ON (d.location_id = l.location_id)
+WHERE LOWER(l.city) = 'toronto'; 
+
+
+4. Create a report to display employee's last name and employee number along with their manager’s last name and manager number. Label the columns Employee , Emp# , Manager , and Mgr# , respectively. 
+
+SELECT w.last_name "Employee", w.employee_id "EMP#",
+ m.last_name "Manager", m.employee_id "Mgr#"
+FROM employees w join employees m
+ON (w.manager_id = m.employee_id); 
+
+
+5.The HR department wants to determine the names of all the employees who were hired after Davies. Create a query to display the name and hire date of any employee hired after employee Davies.
+
+SELECT e.last_name, e.hire_date
+FROM employees e JOIN employees davies
+ON (davies.last_name = 'Davies')
+WHERE davies.hire_date < e.hire_date; 
+
+6. The HR department needs to find the names and hire dates for all employees who were hired before their managers, along with their managers’ names and hire dates.
+
+SELECT w.last_name, w.hire_date, m.last_name, m.hire_date
+FROM employees w JOIN employees m
+ON (w.manager_id = m.employee_id)
+WHERE w.hire_date < m.hire_date; 
+

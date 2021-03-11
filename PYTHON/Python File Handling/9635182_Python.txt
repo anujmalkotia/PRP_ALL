@@ -1,0 +1,123 @@
+ 1. Write a python script fileio1_ADID.py for the below mentioned requirements.
+a. Create file in1_ADID.txt in your current working directory. Refer below information for creating file.
+b. Read the contents of file in1_ADID.txt line by line and display on console.
+c. Read the entire content of file in1_ADID.txt and display on console.
+
+
+in1_ADID.txt  File
+We are learning file input output operation in Python
+Completed learning w.r.t command line arguments topic
+CIS trainings going on well
+
+f1=open('in1_ADID.txt','r')
+line=f1.readline()
+while line:
+    print(line)
+    line=f1.readline()
+f1.close
+
+
+ 2. Write a python script fileio2_ADID.py for the below mentioned requirements.
+a. Use file in1_ADID.txt which was created in question1. 
+b. Use the read() function to read the 11 characters from the beginning of file in1_ADID.txt and display read information on console.
+c. Use the readline() function to read first line from file in1_ADID.txt and display read information on console. Any observation w.r.t output?
+d. Use read() function to read the content of file in1_ADID.txt and display read information on console.
+
+f1=open('in1_ADID.txt','r')
+line=f1.read(11)
+print (line)
+
+line1=f1.readline()
+print (line1)
+
+line2=f1.read()
+print (line2)
+
+
+
+ 3. Write a python script fileio3_ADID.py for the below mentioned requirements.
+a. Use file in1_ADID.txt which was created in question1. 
+b. Use the readlines() function to read line by line from file in1_ADID.txt and store result in list1_ADID. Display list1_ADID on console.
+c. Display size of list,  list1_ADID on console.
+d. Use close() function to close the file handler. Then read all the content of file using read() function. What will be the output?
+
+f1=open('in1_ADID.txt','r')
+list1_ADID = f1.readlines()
+print (list1_ADID)
+print(len(list1_ADID))
+f1.close()
+f2=open('in1_ADID.txt','r')
+print(f2.read())
+
+
+4. Write a python script fileio4_ADID.py for the below mentioned requirements.
+a. Open the file, newfile1_ADID.txt from your current working directory in read mode. This file is not there in current working directory. What will the output? 
+b. Open the file, newfile1_ADID.txt from your current working directory in write mode. This file is not there in current working directory. What will the output? 
+c. Write string s1_ADID=“This is the newline added at end” to the newfile1_ADID.txt file. Display the content of newfile1_ADID.txt file on console. 
+d. Again write, string s1_ADID=“This is the newline added at end” to the newfile1_ADID.txt file. Display the content of newfile1_ADID.txt file on console. Any observation w.r.t output?
+
+a) OUTPUT
+Traceback (most recent call last):
+  File "C:\Users\chinu\Desktop\ANUJ\WIPRO\PYTHON\Python File Handling\fileio4_ADID.py", line 1, in <module>
+    f1=open('newfile1_ADID.txt','r')
+FileNotFoundError: [Errno 2] No such file or directory: 'newfile1_ADID.txt'
+
+f2=open('newfile1_ADID.txt','w')
+s1_ADID='This is the newline added at end'
+f2.write(s1_ADID)
+f2.close()
+f1=open('newfile1_ADID.txt','r')
+print(f1.read())
+f1.close()
+f3=open('newfile1_ADID.txt','w')
+s1_ADID='This is the newline added at end'
+f3.write(s1_ADID)
+f3.close()
+
+
+5. Write a python script fileio5_ADID.py for the below mentioned requirements.
+a. Use file in1_ADID.txt which was created in question1. 
+b. Open the file in1_ADID.txt  in read mode as follows: 
+fd1=open(“in1_ADID.txt”, “r”)
+c. What will the output of fd1.name
+d. What will the output of fd1.closed
+e. What will the output of fd1.mode
+f. Close the file using fd1.close(). Then find out the output of fd1.closed and display on console.
+
+fd1=open('in1_ADID.txt','r')
+print(fd1.name)
+print(fd1.closed)
+print(fd1.mode)
+fd1.close()
+print(fd1.closed())
+
+
+ 6. Write a python script fileio6_ADID.py for the below mentioned requirements.
+a. Open the file, in1_ADID.txt from your current working directory in read mode. Use tell() function to find out the position of cursor. What will the output? 
+b. Use seek() function to read 11 characters from the beginning of file. Display the read characters on console. 
+c. Use seek() function to read 11 characters from the end of file. Display the read characters on console. 
+d. Now display the position of cursor using tell() function. Move the cursor to beginning of file using seek() function. Again display the position of cursor using tell() function.
+
+f1=open('in1_ADID.txt','r')
+print(f1.tell())
+print(f1.seek(11))
+print(f1.seek(-11,2))
+print(f1.tell())
+
+
+
+7. Write a python script fileio7_ADID.py for the below mentioned requirements.
+a. Open the file, in1_ADID.txt from your current working directory in read mode. Read 11 characters from end of file. Display read characters on console.
+b. Use seek(-13, 1) function then use readline() function to read one line. Display the read line on console. 
+c. Use seek(5, 0) function then use readline() function to read one line. Display the read line on console. 
+d. Now display the position of cursor using tell() function. 
+
+f1=open('in1_ADID.txt','rb')
+f1.seek(-11,2)
+print(f1.read(11))
+f1.seek(-13,0)
+print(f1.readline())
+f1.seek(5,0)
+print(f1.readline())
+print(f1.tell())
+f1.close()

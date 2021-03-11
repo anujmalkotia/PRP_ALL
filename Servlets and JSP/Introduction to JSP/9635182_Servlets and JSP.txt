@@ -1,0 +1,111 @@
+Q1.
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment1</title>
+</head>
+<body>
+	<form method="get" action="primes.arp">
+		Enter a number: <input type="text" name="number" />
+		<input type="submit" name="submit" /> 
+	</form>
+</body>
+</html>
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Assignment1Servlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		
+		int number = Integer.parseInt(request.getParameter("number"));
+		
+		List<Integer> primeList = new ArrayList<>();
+		
+		for (int i = 0; i < number; i++) {
+			if (isPrime(i))
+				primeList.add(i);
+		}
+		
+		//response.sendRedirect("result.jsp");
+		//out.println(primeList); 
+		
+		// pass object from servlet to jsp
+		// https://www.programmergate.com/pass-data-servlet-jsp/
+		request.setAttribute("primeList", primeList);
+		request.getRequestDispatcher("primeResult.jsp").forward(request, response);
+		
+		out.close();
+	}
+	
+	public static boolean isPrime (int input1) {
+		if (1 == input1) return false;
+		
+		for (int i = 2; i < input1; i++) {
+			if (i == input1) continue;
+			if (input1 % i == 0) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+}
+
+Q2.
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%--Write a JSP program which when invoked will print today’s 
+	date and time. [Hint: Use JSP expressions here]--%>
+	<%= new Date() %>
+</body>
+</html>
+
+Q3.
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%!
+	int fact(int num) {
+		if (num == 1) return 1;
+		return num * fact(num - 1);
+	}
+%>    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Factorial table</h1>
+	<table border="1">
+		<tr><th>Number</th><th>Factorial</th></tr>
+		<% for (int i = 1; i < 10; i++) { %>
+			<tr><td><%= i %></td><td><%= fact(i) %></td></tr>
+		<% } %>
+	</table>
+</body>
+</html>

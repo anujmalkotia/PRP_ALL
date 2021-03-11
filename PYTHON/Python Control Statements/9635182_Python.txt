@@ -1,0 +1,137 @@
+1. Write a python script constat1_ADID.py for the below mentioned requirements.
+a. Read first line from /etc/passwd file. 
+b. Then split the contents of first line and store the result in list list1_ADID.
+c. Display the contents of list1_ADID on console.
+
+Hint: Use head filter to read first line from /etc/passwd file and store it in another file passwdfile. Use passwdfile for processing.
+
+f=open("psswd.txt")
+a=f.readline()
+print (a)
+b=a.split()
+print (b)
+
+2. Write a python script constat2_ADID.py for the below mentioned requirements.
+a. Read filename as input from command line argument.
+b. Display the owner of filename on console.
+c. Display the size of the filename on console.
+d. Display the link count of the filename on console.
+
+import os, os.path
+f1=input("Enter Filename:::")
+print(find_owner(f1))
+print(file_stats)
+DIR = '/tmp'
+print (len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]))
+
+3. Write a python script constat3_ADID.py for the below mentioned requirements.
+a. Read filename as input from keyboard.
+b. Find out the type of filename as normal file or directory or soft link.
+c. If filename type is normal file, then display “This is Normal file” on console.
+d. If filename type is directory, then display “This is Directory” on console.
+e. If filename type is soft link, then display “This is Soft link file” on console.
+Hint: Use proper conditional statement.
+
+filename=input("Enter filename:::")
+def file_type2(filename):
+    if lexists(filename):
+        if exists(filename):
+            mode = stat(filename).st_mode
+            lmode = lstat(filename).st_mode # os.lstat doesn't follow symlinks
+            if S_ISREG(mode) and S_ISREG(lmode):
+                return FileTypes.FILE
+            elif S_ISREG(mode) and S_ISLNK(lmode):
+                return FileTypes.LINK_TO_FILE
+            elif S_ISDIR(mode) and S_ISDIR(lmode):
+                return FileTypes.DIR
+            elif S_ISDIR(mode) and S_ISLNK(lmode):
+                return FileTypes.LINK_TO_DIR
+            else:
+                return FileTypes.UNDEFINED
+        else:
+            return FileTypes.BROKEN_LINK
+    else:
+        return FileTypes.NO_SUCH
+file_type2(filename)
+
+4. Write a python script constat4_ADID.py for the below mentioned requirements.
+a. Display the current working directory of user on console.
+b. Display the home directory of user on console.
+c. If current working directory is same as home directory, then display message “Both directories are same” on console.
+d. If current working directory is different from home directory, then display message “Both directories are different” on console.
+Hint1: Use proper conditional statement. 
+Hint2: Run operating system commands inside python script.
+
+import os
+path=os.getcwd()
+print("Current Working Directory:", path)
+hd=os.path.expanduser('~')
+print("Home Directory:", hd)
+if(path==os):
+    print("Both directories are same")
+else:
+    print("Both directories are different")
+
+
+5. Write a python script constat5_ADID.py for the below mentioned requirements.
+a. Pass 2 variables A_ADID and B_ADID from command line.
+b. Pass condition, con1 variable from keyboard.
+c. If condition con1 equals to “add” then do addition of 2 numbers. If condition con1 equals to “sub” then do subtraction of 2 numbers.
+d. If condition con1 equals to “mul” then do multiplication of 2 numbers. If condition con1 equals to “div” then do division of 2 numbers.
+e. If there is no match for condition con1, then it should display “Enter proper input condition” on console.
+Hint1: Use proper conditional statement.
+
+A_ADID=eval(input("ENTER NUMBER 1:"))
+B_ADID=eval(input("ENTER NUMBER 2:"))
+con1=input("Enter Condition:")
+if(con1=="add"):
+    print(A_ADID + B_ADID)
+elif(con1=="sub"):
+    print(A_ADID - B_ADID)
+elif(con1=="mul"):
+    print(A_ADID * B_ADID)
+elif(con1=="div"):
+    print(A_ADID / B_ADID)
+else:
+    print("Enter proper condition")
+
+
+ 6. Write a python script constat6_ADID.py for the below mentioned requirements.
+a. Pass username through keyboard. 
+b. Check whether username passed is valid user or not. If valid, then display “Valid user on console”. If not valid, then display “Invalid user on console”.
+c. If username is valid, then display total number of processes created by that username on console.
+
+Hint1: Valid username is present in /etc/passwd file. Hint2: Use file handling related functions if required.
+
+import psutil
+username=input("Enter username:::")
+f1=open("psswd.txt")
+line=f1.readlines()
+for i in lines:
+    if(line==username):
+        print ("Valid")
+    else:
+        print("Invalid")
+pids=[process.pid for process in psutil.process_iter() if 
+        process.username == 'root']
+print (pids)
+
+
+7. Write a python script constat7_ADID.py for the below mentioned requirements.
+a. Display the current working directory of user on console.
+b. Create a directory “dir1_ADID” under current working directory. Pass directory name through keyboard.
+c. Display the content of your current working directory on console.
+d. If directory “dir1_ADID” present already, then it should display “Unable to create new directory” message on console. 
+
+Hint1: Use proper conditional statement. 
+Hint2: Use directory related commands, to create directory.
+
+import os
+path=os.getcwd()
+print (path)
+directory=input("Enter Directory name::")
+path1=os.path.join(path, directory)
+os.mkdir(path1)
+print("Directory '%s' created" % directory)
+
+
